@@ -1,0 +1,23 @@
+INSERT INTO course(course_id,course_name,course_description,course_length)
+VALUES 
+       (1,'Mathematics','desc',60),
+       (2,'English','desc',60),
+       (3,'Biology','desc',45),
+       (4,'Chemistry','desc',45),
+       (5,'Physics','desc',45)
+       
+INSERT INTO student(student_id,first_name,last_name,school)
+VALUES 
+       (1,'Sergio','Smith','School1'),
+       (2,'Richard','Jones','School1'),
+       (3,'Joseph','Wilson','School2'),
+       (4,'Thomas','Williams','School2'),
+       (5,'Charles','Brown','School3')
+
+INSERT INTO lecturer(lecturer_id,first_name,last_name)
+VALUES 
+       (1,'Robert','Willliams'),
+       (2,'James','Smith'),
+       (3,'John','Davies'),
+       (4,'Michael','Taylor'),
+       (5,'David','Hall')
