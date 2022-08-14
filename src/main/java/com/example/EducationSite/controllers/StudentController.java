@@ -6,7 +6,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,10 +26,12 @@ public class StudentController {
     public Student getStudent(@PathVariable Long id) {
         Optional<Student> opt = studentRepository.findById(id);
 
-        if(opt.isPresent())
+        return opt.orElse(null);
+
+        /*if(opt.isPresent())
             return opt.get();
         else
-            return null;
+            return null;*/
     }
 
     @PostMapping
