@@ -1,21 +1,21 @@
-CREATE TABLE course
+CREATE TABLE courses
 (
     course_id          SERIAL PRIMARY KEY,
     course_name        varchar(80)   NOT NULL,
     course_description varchar(1024) NOT NULL,
     course_length      integer       NOT NULL
 );
-CREATE TABLE student
+CREATE TABLE students
 (
     student_id    SERIAL PRIMARY KEY,
     first_name    varchar(30)   NOT NULL,
     last_name     varchar(30)   NOT NULL,
-    school varchar(50)   NOT NULL
+    grade integer NOT NULL
 );
 
-CREATE TABLE Lecturer
+CREATE TABLE lecturers
 (
     lecturer_id SERIAL PRIMARY KEY,
     first_name    varchar(30)   NOT NULL,
-    last_name     varchar(30)   NOT NULL,
+    last_name     varchar(30)   NOT NULL
 )
