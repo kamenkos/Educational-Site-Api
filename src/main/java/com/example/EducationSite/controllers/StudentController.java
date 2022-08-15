@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/students")
+@RequestMapping("api/student")
 public class StudentController {
 
     @Autowired
@@ -35,8 +35,8 @@ public class StudentController {
     }
 
     @PostMapping
-    public Student postStudent(@RequestBody final Student student) {
-        return studentRepository.saveAndFlush(student);
+    public void postStudent(@RequestBody final Student student) {
+        studentRepository.saveAndFlush(student);
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
