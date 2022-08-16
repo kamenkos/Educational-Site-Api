@@ -10,18 +10,18 @@ public class Student {
     private long student_id;
     private String first_name;
     private String last_name;
-    private String school;
+    private int grade;
+
     @Transient
-    @ManyToMany(mappedBy = "course")
+    @ManyToMany(mappedBy = "courses")
     private List<Course> listOfCourses;
 
-    public Student(long student_id, String first_name, String last_name, String school) {
+    public Student(long student_id, String first_name, String last_name, int grade) {
         this.student_id = student_id;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.school = school;
+        this.grade = grade;
     }
-
 
     public Student() {
     }
@@ -50,12 +50,12 @@ public class Student {
         this.last_name = last_name;
     }
 
-    public String getSchool() {
-        return school;
+    public int getGrade() {
+        return grade;
     }
 
-    public void setSchool(String school) {
-        this.school = school;
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 
     public List<Course> getListOfCourses() {

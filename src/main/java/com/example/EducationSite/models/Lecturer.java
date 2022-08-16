@@ -11,8 +11,8 @@ public class Lecturer {
     private String first_name;
     private String last_name;
     @Transient
-    @ManyToMany(mappedBy = "course")
-    List<Course> listOfCourses;
+    @ManyToMany(mappedBy = "courses")
+    private List<Course> listOfCourses;
 
     public Lecturer(long lecturer_id, String first_name, String last_name) {
         this.lecturer_id = lecturer_id;

@@ -1,5 +1,7 @@
 package com.example.EducationSite.models;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,22 +13,27 @@ public class Course {
     private String course_name;
     private String course_description;
     private String course_length;
-    @Transient
+
     @ManyToMany
     @JoinTable(
             name = "course_lecturers",
-            joinColumns = @JoinColumn(name= "course_id"),
-            inverseJoinColumns = @JoinColumn(name = "lecturer_id")
+            joinColumns = @JoinColumn(name= "lecturer_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id")
     )
     List<Lecturer> listOfLecturers;
-    @Transient
     @ManyToMany
     @JoinTable(
             name = "course_students",
-            joinColumns = @JoinColumn(name= "course_id"),
-            inverseJoinColumns = @JoinColumn(name = "student_id")
+            joinColumns = @JoinColumn(name= "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id")
     )
     List<Student> listOfStudents;
+    /*@ManyToMany
+    @JoinTable(
+            name = "student_marks",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id"))
+    List<Mark> listOfMarks;*/
 
     public Course(int course_id, String course_name, String course_description, String course_length) {
         this.course_id = course_id;
@@ -87,5 +94,11 @@ public class Course {
         this.listOfStudents = listOfStudents;
     }
 
+    /*public List<Mark> getListOfMarks() {
+        return listOfMarks;
+    }
 
+    public void setListOfMarks(List<Mark> listOfMarks) {
+        this.listOfMarks = listOfMarks;
+    }*/
 }
