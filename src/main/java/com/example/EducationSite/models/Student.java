@@ -12,9 +12,14 @@ public class Student {
     private String last_name;
     private int grade;
 
-    @Transient
+    /*@Transient
     @ManyToMany(mappedBy = "courses")
     private List<Course> listOfCourses;
+
+    @Transient
+    @ManyToMany(mappedBy = "courses")
+    private List<Course> listOfMarks;*/
+
 
     public Student(long student_id, String first_name, String last_name, int grade) {
         this.student_id = student_id;
@@ -58,11 +63,19 @@ public class Student {
         this.grade = grade;
     }
 
-    public List<Course> getListOfCourses() {
+    /*public List<Course> getListOfCourses() {
         return listOfCourses;
     }
 
     public void setListOfCourses(List<Course> listOfCourses) {
         this.listOfCourses = listOfCourses;
     }
+
+    public List<Course> getListOfMarks() {
+        return listOfMarks;
+    }
+
+    public void setListOfMarks(List<Course> listOfMarks) {
+        this.listOfMarks = listOfMarks;
+    }*/
 }

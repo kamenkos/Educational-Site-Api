@@ -19,13 +19,6 @@ CREATE TABLE lecturers
     first_name    varchar(30)   NOT NULL,
     last_name     varchar(30)   NOT NULL
 )
-
-CREATE TABLE student_marks
-(
-    student_id integer NOT NULL REFERENCES students (student_id),
-    course_id integer NOT NULL REFERENCES courses(course_id),
-    mark integer 
-)
 CREATE TABLE course_students
 (
     student_id integer NOT NULL REFERENCES students (student_id),
@@ -35,4 +28,15 @@ CREATE TABLE course_lecturers
 (
     lecturer_id integer NOT NULL REFERENCES lecturers(lecturer_id),
     course_id integer NOT NULL REFERENCES courses(course_id)
+)
+CREATE TABLE marks
+(
+    mark_id SERIAL PRIMARY KEY,
+    mark integer
+)
+CREATE TABLE student_marks
+(
+    student_id integer NOT NULL REFERENCES students (student_id),
+    course_id integer NOT NULL REFERENCES courses(course_id),
+    mark_id integer NOT NULL REFERENCES marks(mark_id)
 )

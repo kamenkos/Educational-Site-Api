@@ -51,7 +51,7 @@ public class CourseController {
         Course existingCourse;
         if(opt.isPresent()) {
             existingCourse = opt.get();
-            BeanUtils.copyProperties(course, existingCourse, "lecturer_id");
+            BeanUtils.copyProperties(course, existingCourse, "course_id");
 
             return courseRepository.saveAndFlush(existingCourse);
         }

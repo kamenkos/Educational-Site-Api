@@ -1,27 +1,24 @@
 package com.example.EducationSite.models;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Entity
+@Entity(name = "marks")
 public class Mark {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long mark_id;
-    private Long student_id;
-    private Long course_id;
-
-    /*@Transient
-    @ManyToMany(mappedBy = "course")
-    private List<Course> listOfCourses;*/
+    private int mark;
 
     public Mark() {
     }
 
-    public Mark(Long mark_id, Long student_id, Long course_id) {
+    public Mark(Long mark_id, int mark) {
         this.mark_id = mark_id;
-        this.student_id = student_id;
-        this.course_id = course_id;
+        this.mark = mark;
     }
 
     public Long getMark_id() {
@@ -32,27 +29,11 @@ public class Mark {
         this.mark_id = mark_id;
     }
 
-    public Long getStudent_id() {
-        return student_id;
+    public int getMark() {
+        return mark;
     }
 
-    public void setStudent_id(Long student_id) {
-        this.student_id = student_id;
+    public void setMark(int mark) {
+        this.mark = mark;
     }
-
-    public Long getCourse_id() {
-        return course_id;
-    }
-
-    public void setCourse_id(Long course_id) {
-        this.course_id = course_id;
-    }
-
-    /*public List<Course> getListOfCourses() {
-        return listOfCourses;
-    }
-
-    public void setListOfCourses(List<Course> listOfCourses) {
-        this.listOfCourses = listOfCourses;
-    }*/
 }

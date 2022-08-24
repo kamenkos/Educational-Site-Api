@@ -10,9 +10,10 @@ public class Lecturer {
     private long lecturer_id;
     private String first_name;
     private String last_name;
-    @Transient
+
+    /*@Transient
     @ManyToMany(mappedBy = "courses")
-    private List<Course> listOfCourses;
+    private List<Course> listOfCourses;*/
 
     public Lecturer(long lecturer_id, String first_name, String last_name) {
         this.lecturer_id = lecturer_id;
@@ -48,11 +49,11 @@ public class Lecturer {
         this.last_name = last_name;
     }
 
-    public List<Course> getListOfCourses() {
+    /*public List<Course> getListOfCourses() {
         return listOfCourses;
     }
 
     public void setListOfCourses(List<Course> listOfCourses) {
         this.listOfCourses = listOfCourses;
-    }
+    }*/
 }
